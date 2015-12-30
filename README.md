@@ -1,21 +1,24 @@
 **Como correr la app?**
 
 
-Pasos:
+### Pasos: ###
 
-1. Ejecutar el script llamado 
+* Ejecutar el script llamado 
+
 ```
 #!sql
 
 DatabaseScript.sql.
 ```
+
 (ubicado en el root path del proyecto)
 
-2. Tener soporte para ASP.NET 5.0 y MVC 6. (en visual studio o dnx)
 
-3. Cambiar "SQLEXPRESS" si es necesario. 
-   Ruta:
-   
+* Tener soporte para ASP.NET 5.0 y MVC 6. (en visual studio o dnx)*
+ 
+* Cambiar "SQLEXPRESS" si es necesario. *
+  Ruta:
+    
 ```
 #!c#
 
@@ -24,7 +27,10 @@ linea  : 19
 ```
 
    
-4. Si tiene VS bien configuardo(punto 2), debe solo darle a ejecutar.
+* Si tiene VS bien configuardo(punto 2), debe solo darle a ejecutar (F5).
+
+
+
 
 
 **Stack**.
