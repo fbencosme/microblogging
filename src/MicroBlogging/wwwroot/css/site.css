@@ -1,0 +1,45 @@
+﻿body {
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    -webkit-background-size: cover;
+    background: url(../images/cyan-pentagonal-background.png) no-repeat center center fixed;
+    background-size: cover;
+    height: auto !important;
+}
+
+.blur { opacity: .8; }
+
+section.center, div.center {
+    left: 40%;
+    position: fixed;
+    top: 50%;
+}
+
+.home, .login, .signup { padding-top: 15rem; }
+
+.signup md-content { padding: 2rem; }
+
+.login md-content { padding: 1rem; }
+
+.home h1, .home p {
+    color: white;
+    opacity: .7;
+}
+
+md-tabs, ui-view { margin: 2rem 8rem; }
+
+mb-post { margin: 1rem; }
+
+.account md-content { padding: 2rem; }
+
+.account, .follows { padding: 1rem 0; }
+
+.md-avatar { background-color: gray; }
+
+.bold { font-weight: bold !important; }
+
+md-tab-content { overflow: hidden; }
+
+.follows md-content {
+  padding: 1rem;
+}
