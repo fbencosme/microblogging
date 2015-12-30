@@ -32,8 +32,6 @@ linea  : 19
 1. ASP.NET 5.0 y MVC 6.
 2. AngularJS
 3. Libraries: 
-   * lodash: https://lodash.com/
-   * moment: http://momentjs.com/
-   * angular-material: https://material.angularjs.org/
-   
- 
+   1. * lodash: https://lodash.com/
+   1. * moment: http://momentjs.com/
+   1. * angular-material: https://material.angularjs.org/
