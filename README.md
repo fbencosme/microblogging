@@ -30,6 +30,12 @@ linea  : 19
 * Si tiene VS bien configuardo(punto 2), debe solo darle a ejecutar (F5).
 
 
+*  Visite,
+```
+#!bash
+
+ http://localhost:5000/
+```
 
 
 
