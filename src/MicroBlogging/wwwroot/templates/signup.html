@@ -1,0 +1,68 @@
+<div layout="row" flex layout-align="center center" class="signup">
+
+    <form name="form" ng-submit="continue(user)">
+        <md-content>
+            <md-input-container class="md-block">
+                <label>Full Name</label>
+                <input required name="FullName" ng-model="user.FullName">
+                <div ng-messages="form.FullName.$error">
+                    <div ng-message="required">This is required.</div>
+                </div>
+            </md-input-container>
+
+            <md-input-container class="md-block">
+                <label>Username / Email</label>
+                <input required type="email" name="email" ng-model="user.username"
+                       minlength="10" maxlength="100" ng-pattern="/^.+@.+\..+$/"/>
+                <div ng-messages="form.email.$error" role="alert" ng-if="errors.Username">
+                    <div ng-message-exp="['required', 'minlength', 'maxlength', 'pattern']">
+                        Your email/username must look like an e-mail address.
+                    </div>
+                </div>
+                <div ng-messages="emailUsed" ng-if="emailUsed">
+                    <div ng-message="emailUsed">Username / email already taken.</div>
+                </div>
+            </md-input-container>
+
+            <md-input-container class="md-block">
+                <label>Password</label>
+                <input required type="Password" name="password" ng-model="user.password" required=""/>
+                <div ng-messages="form.password.$error" role="alert" ng-if="errors.Password">
+                    <div ng-message-exp="['required']">
+                        Invalid Password.
+                    </div>
+                </div>
+            </md-input-container>
+            <md-input-container class="md-block">
+                <label>Password</label>
+                <input required type="password" name="confirmPassword" ng-model="user.confirmPassword" required=""/>
+                <div ng-messages="form.password.$error" role="alert" ng-if="errors.confirmPassword">
+                    <div ng-message-exp="['required']">
+                        password does not match.
+                    </div>
+                </div>
+            </md-input-container>
+            <md-input-container class="md-block">
+                <label>Gender</label>
+                <md-select ng-model="user.gender" required>
+                    <md-option ng-repeat="gender in genders" value="{{gender}}">
+                        {{gender}}
+                    </md-option>
+                </md-select>
+            </md-input-container>
+
+            <md-button
+                ng-disabled="form.$invalid"
+                class="md-primary"
+                type="submit">
+                Continue
+            </md-button>
+
+            <md-button
+                class="md-primary"
+                ng-click='go("home")'>Cancel</md-button>
+
+        </md-content>
+
+    </form>
+</div>

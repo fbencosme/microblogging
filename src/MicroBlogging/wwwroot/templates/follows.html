@@ -1,0 +1,17 @@
+<div class="follows">
+  <md-content>
+    <md-list>
+        <md-subheader class="md-no-sticky">{{follows.length}} users</md-subheader>
+        <md-list-item class="md-3-line" ng-repeat="follow in follows">
+          <img ng-src="{{follow.Picture | picture}}" class="md-avatar" alt="" />
+          <div class="md-list-item-text" layout="column">
+            <h3 ng-bind='follow.FullName | capitalize' class="bold"></h3>
+            <p ng-bind='"@" + follow.Username.split("@")[0]'></p>
+          </div>
+          <md-button ng-click='view(follow)'> {{follow | followStatus}}
+          </md-button>
+          <md-divider md-inset ng-if="!$last" style = "left: 72px;"></md-divider>
+        </md-list-item>
+    </md-list>
+  </md-content>
+</div>

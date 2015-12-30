@@ -1,0 +1,42 @@
+<div layout="row" flex layout-align="center center" class="login">
+    <form name="form" ng-submit="continue(user)">
+        <md-content layout-padding layout-wrap>
+            <div flex="100">
+                <md-input-container>
+                    <label>Username</label>
+                    <input ng-model="user.username" type="email" required>
+                </md-input-container>
+
+                <md-input-container>
+                    <label>Password</label>
+                    <input ng-model="user.password" type="password" required>
+                    <div ng-messages="error" ng-if="notFound">
+                        <div ng-message="required">Invalid username or password.</div>
+                    </div>
+                </md-input-container>
+            </div>
+
+            <div flex="100">
+                <md-button
+                    ng-disabled="form.$invalid || loading"
+                    class="md-primary"
+                    type="submit">
+                    Continue
+                </md-button>
+
+                <md-button
+                    ng-disabled="loading"
+                    class="md-primary"
+                    ng-click='go("home")'>
+                    Cancel
+                </md-button>
+            </div>
+
+            <md-progress-linear
+                md-mode="indeterminate"
+                flex="100"
+                ng-show="loading">
+            </md-progress-linear>
+        </md-content>
+    </form>
+</div>

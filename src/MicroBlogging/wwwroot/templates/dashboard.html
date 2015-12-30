@@ -1,0 +1,38 @@
+<md-tabs class="md-accent md-dynamic-height" md-border-bottom>
+
+    <md-tab id="home">
+        <md-tab-label>Home</md-tab-label>
+        <md-tab-body>
+            <mb-post posts="posts"></mb-post>
+            <mb-posts posts="posts"></mb-posts>
+        </md-tab-body>
+    </md-tab>
+
+    <md-tab id="follows">
+        <md-tab-label>Follow</md-tab-label>
+        <md-tab-body>
+            <mb-follows></mb-follows>
+        </md-tab-body>
+    </md-tab>
+
+    <md-tab id="account">
+        <md-tab-label>Account</md-tab-label>
+        <md-tab-body>
+            <mb-account></mb-account>
+        </md-tab-body>
+    </md-tab>
+
+    <md-tab
+        id="account"
+        md-on-select="logout()">
+        <md-tab-label>Log out</md-tab-label>
+        <img
+            ng-src="{{currentUser.Picture | picture}}"
+            class="md-avatar"
+            alt=""/>
+        <md-tab-body>
+            <mb-account></mb-account>
+        </md-tab-body>
+    </md-tab>
+
+</md-tabs>

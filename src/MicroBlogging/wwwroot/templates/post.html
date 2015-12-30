@@ -1,0 +1,59 @@
+<md-content layout-padding>
+    <form name="form">
+      <md-input-container class="md-block">
+        <label>what's happening?</label>
+        <textarea
+          md-maxlength = "200"
+          ng-model     = "post.text"
+          rows         = "4"
+          name         = 'text'
+          ng-focus     = 'focus()'>
+        </textarea>
+        <div ng-messages="form.text.$error">
+          <div ng-message="md-maxlength">The message  has to be less than 200 characters long.</div>
+        </div>
+      </md-input-container>
+
+
+      <md-input-container class="md-block" ng-show = 'post.focus'>
+        <md-list-item layout="row" layout-wrap>
+          <img ngf-thumbnail="post.file" style="height: 400px" layout-align = 'center'>
+          <md-button
+            flex     = "100"
+            md-no-ink
+            class      = "md-primary"
+            ngf-select = "upload($file)"
+            ng-model   = "post.file">
+            Media
+          </md-button>
+        </md-list-item>
+        <div>
+          <md-checkbox ng-model="post.global" aria-label="Global" layout = 'row'>
+            Public
+          </md-checkbox>
+          <span style="color: gray; opacity: .6; font-size: .7rem;">
+            When you share something with Public that means anyone including people off of Micro Blogger can see it.
+          </h6>
+
+        </div>
+
+        <div layout = 'row' style="margin-left: -7px !important; padding-top: 2rem">
+          <md-button
+            ng-disabled = "form.$invalid"
+            class       = "md-raised md-primary md-button md-ink-ripple"
+            ng-click    = 'create(post)'>Post
+          </md-button>
+
+          <md-button
+            class    = "md-primary"
+            ng-click = 'cancel()'>Cancel
+          </md-button>
+        </div>
+        <md-progress-circular
+          md-mode = "indeterminate"
+          flex    = "100"
+          ng-show = 'posting'>
+        </md-progress-circular>
+      </md-input-container>
+    </form>
+  </md-content>

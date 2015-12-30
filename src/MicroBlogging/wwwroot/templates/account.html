@@ -1,0 +1,80 @@
+<div class="account">
+
+  <md-content>
+    <form name="form" ng-submit="save(user)">
+      <md-input-container class="md-block">
+        <label>Full Name</label>
+        <input required name = "FullName" ng-model="user.FullName">
+        <div ng-messages="form.FullName.$error">
+          <div ng-message="required">This is required.</div>
+        </div>
+      </md-input-container>
+
+      <md-input-container class="md-block">
+        <label>Username / Email</label>
+        <input
+          required
+          type       = "email"
+          name       = "Username"
+          ng-model   = "user.Username"
+          minlength  = "10"
+          maxlength  = "100"
+          ng-pattern = "/^.+@.+\..+$/" />
+        <div
+          ng-messages = "form.Username.$error"
+          role        = "alert"
+          ng-if       = 'errors.Username'>
+          <div ng-message-exp = "['required', 'minlength', 'maxlength', 'pattern']">
+            Your email/username must look like an e-mail address.
+          </div>
+        </div>
+        <div ng-messages="emailUsed" ng-if="emailUsed">
+          <div ng-message="emailUsed">Username / email already taken.</div>
+        </div>
+      </md-input-container>
+
+      <md-input-container class="md-block">
+        <label>Gender</label>
+        <md-select ng-model="user.Gender" required>
+          <md-option ng-repeat="gender in genders" value="{{gender}}">
+            {{gender}}
+          </md-option>
+        </md-select>
+      </md-input-container>
+
+      <md-button
+        ng-disabled = "form.$invalid"
+        class       = "md-primary"
+        type        = 'submit'>
+        Save
+      </md-button>
+      </form>
+    </md-content>
+
+
+    <md-content style = 'margin-top: 2rem;'>
+      <h3>My Picture</h3>
+      <form name = "uploadForm">
+        <md-list-item>
+          <img
+            ng-src = "{{user.Picture | picture}}"
+            class  = "md-avatar"
+            alt    = "" />
+          <md-button
+            md-no-ink
+            class      = "md-primary"
+            ngf-select = "upload($file)"
+            ng-model   = "file">
+            Search
+          </md-button>
+        </md-list-item>
+      </form>
+      <md>
+      <md-progress-linear
+        md-mode = "indeterminate"
+        flex    = "100"
+        ng-show = 'uploading'>
+      </md-progress-linear>
+    <md-content>
+
+</div>
