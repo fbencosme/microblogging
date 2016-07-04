@@ -1,36 +1,35 @@
-**Como correr la app?**
+**How to get started?**
 
 
-### Pasos: ###
+### Steps: ###
 
-* Ejecutar el script llamado 
+* Run script:
 
 ```
 #!sql
 
 DatabaseScript.sql.
 ```
+(located under the root path of the project)
 
-(ubicado en el root path del proyecto)
 
-
-* Tener soporte para ASP.NET 5.0 y MVC 6. (en visual studio o dnx)*
+* You need: ASP.NET 5.0 & MVC 6. (visual studio or dnx)*
  
-* Cambiar "SQLEXPRESS" si es necesario. *
-  Ruta:
+* Change to "SQLEXPRESS" if it is neccesary. *
+  Location:
     
 ```
 #!c#
 
-Archivo: DbContext.cs 
+File: DbContext.cs 
 linea  : 19
 ```
 
    
-* Si tiene VS bien configuardo(punto 2), debe solo darle a ejecutar (F5).
+* If you have VS ready (step 2), just press F5.
 
 
-*  Visite,
+*  Go to,
 ```
 #!bash
 
