@@ -1,7 +1,7 @@
 **How to get started?**
 
 
-### Steps: ###
+## Steps: ##
 
 * Run script:
 
@@ -13,9 +13,9 @@ DatabaseScript.sql.
 (located under the root path of the project)
 
 
-* You need: ASP.NET 5.0 & MVC 6. (visual studio or dnx)*
+* You need: ASP.NET 5.0 & MVC 6. (visual studio or dnx) *
  
-* Change to "SQLEXPRESS" if it is neccesary. *
+* Change to "SQLEXPRESS" if necessary. *
   Location:
     
 ```
